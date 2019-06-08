@@ -6,6 +6,52 @@ import CssBaseline from '@material-ui/core/CssBaseline';
 import theme from '../src/theme';
 
 class MyApp extends App {
+  state = {
+    tasks : [
+      {
+          title : 'get custom _app.js to work',
+          completed : false,
+          assignedTo : 'Alecx'          
+      },
+      {
+          title : 'get custom shared app state to to work',
+          completed : false,
+          assignedTo : 'Alecx'          
+      },
+      {
+          title : 'focus',
+          completed : true,
+          assignedTo : 'Alecx'
+      }
+    ]
+  };
+
+  addTask = (task) => {
+    this.setState({
+      tasks : this.state.tasks.concat(task)
+    }, () => console.log('task added'))
+  };
+
+  editTask = (task) => {
+      let index = this.state.tasks.indexOf(task);
+      let tasks = this.state.tasks; 
+
+      tasks.splice(index, 1, task);
+      this.setState({
+        tasks : tasks
+      });
+  };
+
+  deleteTask = (task) => {
+    let index = this.state.tasks.indexOf(task);
+    let tasks = this.state.tasks;
+    tasks.splice(index, 1);
+
+    this.setState({
+      tasks : tasks
+    });
+  };
+
   componentDidMount() {
     // Remove the server-side injected CSS.
     const jssStyles = document.querySelector('#jss-server-side');
@@ -25,7 +71,7 @@ class MyApp extends App {
         <ThemeProvider theme={theme}>
           {/* CssBaseline kickstart an elegant, consistent, and simple baseline to build upon. */}
           <CssBaseline />
-          <Component {...pageProps} />
+          <Component { ...pageProps } { ...this.state } addTask={this.addTask} editTask={ this.editTask } deleteTask={ this.deleteTask } />
         </ThemeProvider>
       </Container>
     );

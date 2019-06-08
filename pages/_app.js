@@ -29,7 +29,7 @@ class MyApp extends App {
   addTask = (task) => {
     this.setState({
       tasks : this.state.tasks.concat(task)
-    }, () => console.log('task added'))
+    })
   };
 
   editTask = (task) => {

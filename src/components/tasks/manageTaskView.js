@@ -1,8 +1,9 @@
 import Paper from '@material-ui/core/Paper';
 import Checkbox from '@material-ui/core/Checkbox';
 import Chip from '@material-ui/core/Chip';
+import Button from '@material-ui/core/Button';
 
-const TaskSmallView = (props) => {
+const ManageTaskView = (props) => {
 
     const handleComplete = (task) => {
         task.completed = !task.completed;
@@ -21,8 +22,9 @@ const TaskSmallView = (props) => {
             }}
         />
             <Chip size="small" label={ props.task.assignedTo } />
+            <Button variant="contained" color="primary" onClick={(e) => props.deleteTask(props.task)}>Delete Task</Button>
         </Paper>
     )
 };
 
-export default TaskSmallView;
+export default ManageTaskView;

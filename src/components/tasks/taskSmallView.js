@@ -2,8 +2,12 @@ import Paper from '@material-ui/core/Paper';
 import Checkbox from '@material-ui/core/Checkbox';
 import Chip from '@material-ui/core/Chip';
 
-const TaskSmallView = (props) => {
+const paperStyles = {
+    margin : '1em auto',
+    padding : '5px 10px'
+}
 
+const TaskSmallView = (props) => {
     const handleComplete = (task) => {
         task.completed = !task.completed;
 
@@ -11,7 +15,7 @@ const TaskSmallView = (props) => {
     }
 
     return (
-        <Paper>
+        <Paper style={paperStyles}>
             <h1>{ props.task.title }</h1>
             <Checkbox
             checked={props.task.completed}

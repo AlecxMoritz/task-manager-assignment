@@ -6,6 +6,11 @@ import MenuItem from '@material-ui/core/MenuItem';
 import TextField from '@material-ui/core/TextField';
 import { useState, useEffect } from 'react';
 
+const paperStyles = {
+    margin : '1em auto',
+    padding : '10px 10px'
+}
+
 const Manage = (props) => {
     const [ tasks, setTasks ] = useState(props.tasks);
     const [ searchDebounce, setSearchDebounce ] = useState(undefined);
@@ -35,7 +40,7 @@ const Manage = (props) => {
 
     return (
         <Layout>
-            <Paper>
+            <Paper style={ paperStyles }>
                 <h1>Search for a Task</h1>
                 <MenuItem>
                 <TextField

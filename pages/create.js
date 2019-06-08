@@ -4,6 +4,13 @@ import TextField from '@material-ui/core/TextField';
 import Button from '@material-ui/core/Button';
 import { useState } from 'react';
 
+const paperStyles = {
+    margin : '1em auto',
+    padding : '5px 10px',
+    display : 'flex',
+    flexDirection : 'column'
+}
+
 const Create = (props) => {
     const [ title, setTitle ] = useState('');
     const [ assignedTo, setAssignedTo ] = useState('');
@@ -25,7 +32,7 @@ const Create = (props) => {
     return (
         <Layout>
             <Paper>
-                <form onSubmit={(e) => handleSubmit(e)}>
+                <form onSubmit={(e) => handleSubmit(e)} style={ paperStyles }>
                     <TextField
                         id="standard-name"
                         label="Task Title"

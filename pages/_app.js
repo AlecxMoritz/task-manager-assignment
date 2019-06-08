@@ -9,18 +9,18 @@ class MyApp extends App {
   state = {
     tasks : [
       {
-          title : 'get custom _app.js to work',
-          completed : false,
-          assignedTo : 'Alecx'          
-      },
-      {
-          title : 'get custom shared app state to to work',
-          completed : false,
-          assignedTo : 'Alecx'          
-      },
-      {
-          title : 'focus',
+          title : 'Make Coffee',
           completed : true,
+          assignedTo : 'Alecx'          
+      },
+      {
+          title : 'Run disc defrag',
+          completed : false,
+          assignedTo : 'Alecx'          
+      },
+      {
+          title : 'Get cat food',
+          completed : false,
           assignedTo : 'Alecx'
       }
     ]

@@ -43,9 +43,12 @@ class MyApp extends App {
   };
 
   deleteTask = (task) => {
+    console.log('called')
     let index = this.state.tasks.indexOf(task);
     let tasks = this.state.tasks;
     tasks.splice(index, 1);
+
+    console.log(tasks)
 
     this.setState({
       tasks : tasks

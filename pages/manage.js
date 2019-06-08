@@ -23,7 +23,7 @@ const Manage = (props) => {
 
     useEffect(() => {
         handleSearchTwo();
-    }, [ searchText ])
+    }, [ searchText, props ])
     
 
     const handleSearch = (value) => {
@@ -49,7 +49,7 @@ const Manage = (props) => {
             console.log('got some tasks')
             setFilteredTasks(filtered)
         } else {
-            setWarning('no tasks found with that criteria')
+            setWarning('no tasks found')
             setFilteredTasks([])
         }
     }

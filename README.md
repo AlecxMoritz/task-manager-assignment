@@ -1,22 +1,22 @@
-# Next.js example
+# Next.js React Material UI Tech Assignment
+
+This project is a small task management application. It will allow a user to create a task, and assign it to a singular person. They can they mark the task as complete from any view in the app where tasks are present. In the manage tasks section, a user can delete a task, mark as complete, or search for a task to manage.
 
 ## How to use
 
-Download the example [or clone the repo](https://github.com/mui-org/material-ui):
+Clone the project
 
-```sh
-curl https://codeload.github.com/mui-org/material-ui/tar.gz/master | tar -xz --strip=2  material-ui-master/examples/nextjs
-cd nextjs
-```
+`cd` into the project directory
 
-Install it and run:
+`npm install` or `yarn install` to install required dependencies
 
-```sh
-npm install
-npm run dev
-```
+`npm run dev` or `yarn dev` to start the project
 
-## The idea behind the example
+Navigate to localhost:300 to view and interact with the app.
 
-[Next.js](https://github.com/zeit/next.js) is a framework for server-rendered React apps.
-[Hooks](https://reactjs.org/docs/hooks-state.html) are an upcoming feature of React.
+### Major Dependencies
+React
+
+Material UI
+
+Next Js

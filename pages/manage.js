@@ -11,15 +11,18 @@ const paperStyles = {
     padding : '10px 10px'
 }
 
+const warningStyles = {
+    color : 'red'
+}
 const Manage = (props) => {
     const [ tasks, setTasks ] = useState(props.tasks);
     const [ searchDebounce, setSearchDebounce ] = useState(undefined);
     const [ searchText, setSearchText ] = useState('');
     const [ filteredTasks, setFilteredTasks ] = useState([]);
-
+    const [ warning, setWarning ] = useState();
 
     useEffect(() => {
-        handleSearch();
+        handleSearchTwo();
     }, [ searchText ])
     
 
@@ -38,10 +41,25 @@ const Manage = (props) => {
         }
     }
 
+    const handleSearchTwo = () => {
+        setWarning('');
+        let filtered = tasks.filter(task => task.title.includes(searchText));
+
+        if(filtered.length > 0 ) {
+            console.log('got some tasks')
+            setFilteredTasks(filtered)
+        } else {
+            setWarning('no tasks found with that criteria')
+            setFilteredTasks([])
+        }
+    }
+
+
     return (
         <Layout>
             <Paper style={ paperStyles }>
                 <h1>Search for a Task</h1>
+                <p style={ warningStyles }>{ warning }</p>
                 <MenuItem>
                 <TextField
                     id="standard-name"
